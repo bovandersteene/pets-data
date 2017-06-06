@@ -11,18 +11,18 @@ import java.time.LocalDateTime;
 /**
  * Created by bovandersteene on 06/06/2017.
  */
-@Table(name="region")
+@Table(name = "owner")
 @Entity()
-public class Owner  implements Serializable {
+public class Owner implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name="first_name")
+    @Column(name = "first_name")
     private String firstName;
-    @Column(name="last_name")
+    @Column(name = "last_name")
     private String lastName;
     @Column(name = "creation_datetime")
     @JsonIgnore
@@ -32,10 +32,11 @@ public class Owner  implements Serializable {
     @JsonIgnore
     @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime lastModifiedDate;
-    @Column(name="gender")
+    @Column(name = "gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
+    @OneToOne
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     public Long getId() {

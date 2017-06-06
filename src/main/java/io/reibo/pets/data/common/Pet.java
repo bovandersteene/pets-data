@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 /**
  * Created by bovandersteene on 06/06/2017.
  */
+@MappedSuperclass
 public abstract class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +28,8 @@ public abstract class Pet {
     @Column(name = "name")
     private String name;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Owner owner;
 
     public Long getId() {
