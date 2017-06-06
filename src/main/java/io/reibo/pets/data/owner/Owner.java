@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 /**
  * Created by bovandersteene on 06/06/2017.
  */
+
 public class Owner {
     private Long id;
     private String firstName;
