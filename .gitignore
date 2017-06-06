@@ -1,2 +1,6 @@
 .idea/
-/pets-data.iml
+*.iml
+target/
+.DS_Store
+
+application.log
