@@ -1,19 +1,39 @@
 package io.reibo.pets.data.owner;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.reibo.pets.data.AttributeConverter.LocalDateTimeConverter;
 import io.reibo.pets.data.common.Gender;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * Created by bovandersteene on 06/06/2017.
  */
+@Table
+@Entity
+public class Owner  implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-public class Owner {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+    @Column(name="first_name")
     private String firstName;
+    @Column(name="last_name")
     private String lastName;
+    @Column(name = "creation_datetime")
+    @JsonIgnore
+    @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime creationDate;
+    @Column(name = "lastModifiedDate")
+    @JsonIgnore
+    @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime lastModifiedDate;
+    @Column(name="gender")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     public Long getId() {
