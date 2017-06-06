@@ -5,13 +5,14 @@ import io.reibo.pets.data.common.Pet;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Created by bovandersteene on 06/06/2017.
  */
 @Entity()
 @Table(name = "dog")
-public class Dog extends Pet {
+public class Dog extends Pet implements Serializable {
     @Column(name = "paws")
     private Integer paws;
     @Column(name="live_outside")
