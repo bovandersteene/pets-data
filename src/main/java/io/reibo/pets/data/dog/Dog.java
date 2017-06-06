@@ -16,6 +16,8 @@ public class Dog extends Pet {
     private Integer paws;
     @Column(name="live_outside")
     private Boolean liveOutside;
+    @Column(name="breeed")
+    public String breed;
 
     public Integer getPaws() {
         return paws;
@@ -31,5 +33,13 @@ public class Dog extends Pet {
 
     public void setLiveOutside(Boolean liveOutside) {
         this.liveOutside = liveOutside;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 }
