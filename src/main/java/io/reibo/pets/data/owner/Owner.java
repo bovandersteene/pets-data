@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 /**
  * Created by bovandersteene on 06/06/2017.
  */
-@Table
-@Entity
+@Table(name="region")
+@Entity()
 public class Owner  implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -35,6 +35,8 @@ public class Owner  implements Serializable {
     @Column(name="gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    private Address address;
 
     public Long getId() {
         return id;
@@ -82,5 +84,24 @@ public class Owner  implements Serializable {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Owner owner = (Owner) o;
+
+        return id != null ? id.equals(owner.id) : owner.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }
