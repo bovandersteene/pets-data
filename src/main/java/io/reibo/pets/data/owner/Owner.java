@@ -1,5 +1,6 @@
 package io.reibo.pets.data.owner;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.reibo.pets.data.common.Gender;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,9 @@ public class Owner {
     private Long id;
     private String firstName;
     private String lastName;
+    @JsonIgnore
     private LocalDateTime creationDate;
+    @JsonIgnore
     private LocalDateTime lastModifiedDate;
     private Gender gender;
 
