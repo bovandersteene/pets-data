@@ -54,12 +54,27 @@ public class Application {
         dog2.setPaws(3);
         dogRepository.save(dog2);
 
+        final Dog dog3 = new Dog();
+        dog3.setName("Barki");
+        dog3.setBreed("Dalmatier");
+        dog3.setLiveOutside(false);
+        dog3.setPaws(4);
+        dogRepository.save(dog3);
+
+
         final Fish fish1 = new Fish();
         fish1.setFins(2);
         fish1.setLiveInSea(true);
         fish1.setName("Nemo");
         fish1.setOwner(owner);
         fishRepository.save(fish1);
+
+        final Fish fish_no_fins = new Fish();
+        fish_no_fins.setFins(0);
+        fish_no_fins.setLiveInSea(true);
+        fish_no_fins.setName("Nemo");
+        fish_no_fins.setOwner(owner);
+        fishRepository.save(fish_no_fins);
 
 
         return true;
