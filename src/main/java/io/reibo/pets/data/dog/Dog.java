@@ -16,7 +16,7 @@ public class Dog extends Pet {
     private Integer paws;
     @Column(name="live_outside")
     private Boolean liveOutside;
-    @Column(name="breeed")
+    @Column(name="breed")
     public String breed;
 
     public Integer getPaws() {

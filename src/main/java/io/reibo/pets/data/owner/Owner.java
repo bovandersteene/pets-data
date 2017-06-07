@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * Created by bovandersteene on 06/06/2017.
  */
-@Table(name="region")
+@Table(name="owner")
 @Entity()
 public class Owner  implements Serializable {
     private static final long serialVersionUID = 1L;
